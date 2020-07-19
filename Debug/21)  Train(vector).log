@@ -1,0 +1,8 @@
+﻿  Source.cpp
+F:\ITStep\2 курс\ДЗ\21)  Train(vector)\Source.cpp(8,1): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  Train.cpp
+F:\ITStep\2 курс\ДЗ\21)  Train(vector)\Train.cpp(60,20): warning C4018: '<': signed/unsigned mismatch
+F:\ITStep\2 курс\ДЗ\21)  Train(vector)\Train.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+F:\ITStep\2 курс\ДЗ\21)  Train(vector)\Train.cpp(100,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  21)  Train(vector).vcxproj -> F:\ITStep\2 курс\ДЗ\21)  Train(vector)\Debug\21)  Train(vector).exe
