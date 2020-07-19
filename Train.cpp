@@ -59,7 +59,7 @@ void Railway::ShowByNumber(int num) const
 	cout << "You were looking for a departure number " << num << ":" << endl;
 	for (int i = 0; i < trains.size(); i++)
 	{
-		if (trains[i] == num) {
+		if (trains[i].GetNumber() == num) {
 			cout << trains[i] << endl;
 			break;
 		}
@@ -71,17 +71,20 @@ void Railway::ShowByNumber(int num) const
 		cout << "Number " << num << " not found!" << endl;
 }
 
-void Railway::EditTimeBuNumber(int num)
+void Railway::EditTimeBuNumber(int num, int h, int m, int s)
 {
 	bool isFound = true;
-
+	
+	
 	cout << "You want to edit time for a departure number " << num << ":" << endl;
 	for (int i = 0; i < trains.size(); i++)
 	{
-		if (trains[i] == num) {
+		if (trains[i].GetNumber() == num) {
 
-			Train temp = trains[i];
-			trains[i] = temp;
+			
+			trains[i].SetTime(h, m, s);
+			cout << "Time was successfully edited!" << endl;
+			break;
 		}
 		else {
 			isFound = false;
@@ -91,6 +94,12 @@ void Railway::EditTimeBuNumber(int num)
 		cout << "Number " << num << " not found!" << endl;
 }
 
+void Railway::SortByTime()
+{
+	sort(trains.begin(), trains.end());
+}
+
+
 
 void Railway::ShowByDestination(string des) const
 {
@@ -99,7 +108,7 @@ void Railway::ShowByDestination(string des) const
 	cout << "List of trains at the station " << des << ":" << endl;
 	for (int i = 0; i < trains.size(); i++)
 	{
-		if (trains[i] == des) {
+		if (trains[i].GetDestination() == des) {
 			cout << trains[i];
 		}
 		else {
@@ -139,15 +148,3 @@ void Railway::Load()
 	ifs.close();
 }
 
-Train& Train::operator=(const Train& other)
-{
-	this->number = other.number;
-	this->destination = other.destination;
-
-	cout << "Enter new time for departure: ";
-	cin >> this->departureTime.h;
-	cin >> this->departureTime.m;
-	cin >> this->departureTime.s;
-
-	return *this;
-}
